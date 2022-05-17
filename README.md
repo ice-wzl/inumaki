@@ -11,9 +11,5 @@ okay, yes. that's *quite* the exaggeration, but it's really annoying! anyways, i
 git clone https://github.com/cr-0w/inumaki.git && cd inumaki
 python3 -m pip install -r requirements.txt
 chmod +x inumaki
-```
-
-## usage
-```
 ./inumaki
 ```
