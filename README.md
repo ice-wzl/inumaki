@@ -6,7 +6,7 @@ https://user-images.githubusercontent.com/59679082/168722637-88da267c-6d73-414f-
 
 okay, yes. that's *quite* the exaggeration, but it's really annoying! anyways, inumaki will make it so that you can just type in the language you need a shell for, and it will spit out the most common ones used in CTFs! 
 
-## installation
+## ⭐ installation
 ```
 git clone https://github.com/cr-0w/inumaki.git && cd inumaki
 python3 -m pip install -r requirements.txt
