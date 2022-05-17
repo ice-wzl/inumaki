@@ -15,6 +15,6 @@ chmod +x inumaki
 ```
 ---
 ## to-do
-> create support for user-supplied arguments
-> add more shells/languages
-> add an auto listener creator for shells like nc, python, etc.
+- create support for user-supplied arguments
+- add more shells/languages
+- add an auto listener creator for shells like nc, python, etc.
