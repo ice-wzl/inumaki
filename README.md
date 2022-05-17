@@ -4,7 +4,7 @@
 
 https://user-images.githubusercontent.com/59679082/168722637-88da267c-6d73-414f-8f56-8dc8c56ba6b8.mp4
 
-> okay, yes. that's *quite* the exaggeration, but it's really annoying! anyways, inumaki will make it so that you can just type in the language you need a shell for, > and it will spit out the most common ones used in CTFs! 
+> okay, yes. that's *quite* the exaggeration, but it's really annoying! anyways, inumaki will make it so that you can just type in the language you need a shell for, and it will spit out the most common ones used in CTFs! 
 
 ## ⚡ disclaimer! 
 this tool generates reverse shell commands. however, keep in mind that obfuscation does not exist yet. OPSec wise, this tool is the equivalent of running head first into a wall made completely out of megaphones announcing your every move. speaking of reverse shells...
