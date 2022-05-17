@@ -4,7 +4,7 @@
 - [⚠️ **disclaimer**](https://github.com/cr-0w/inumaki#-disclaimer)
 - [💽 **download**](https://github.com/cr-0w/inumaki#-installation)
 - [📜 **to-do**](https://github.com/cr-0w/inumaki#to-do-)
-- [💖 **credits**](https://github.com/cr-0w/inumaki#-credits)
+- [💖 **credits**](https://github.com/cr-0w/inumaki#credits-)
 
 **inumaki!** is a command-line tool written in python which helps remove the tedium of common capture-the-flag 'shell searching'. it's also **my first official project!** we've all been there; a bit of time has passed after our enumeration and we're finally ready to run a reverse shell on our target. however, soon, you're 30 tabs deep in some random blog posts trying to find out the syntax for that *one command* you know you should've memorized by now but couldn't be bothered to. you give up, head over to pentestmonkey or read through your old notes in an attempt to find that elusive command, and finally, after the motherboard on your target has corroded because of how long it's been, you finally find it; swearing thereon to remember that command so you never forget it again. 
 
