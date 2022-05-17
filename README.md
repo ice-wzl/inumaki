@@ -27,7 +27,7 @@ chmod +x inumaki
 - add more shells/languages
 - add an auto listener initializer for shells like nc, python, etc.
 <br>
-[below are things i can work on in the late future perhaps...]
+`[below are things i can work on in the late future perhaps...]`
 <br>
 </br>
 
