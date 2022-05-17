@@ -1,5 +1,4 @@
 ## inumaki! 🦴
----
 **inumaki!** is a command-line tool which helps remove the tedium of common capture-the-flag shell searching. it's also my first official project! 
 
 ## installation
