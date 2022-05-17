@@ -30,10 +30,10 @@ chmod +x inumaki
 - create support for user-supplied arguments
 - add more shells/languages
 - add an auto listener initializer for shells like nc, python, etc.
-<br>
-[below are things i can work on in the late future perhaps...]
-<br>
-</br>
+
+```
+[for the future]
+```
 
 - obfuscated shells? <br>
 - support for windows?
