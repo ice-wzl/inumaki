@@ -13,3 +13,8 @@ python3 -m pip install -r requirements.txt
 chmod +x inumaki
 ./inumaki
 ```
+---
+## to-do
+> create support for user-supplied arguments
+> add more shells/languages
+> add an auto listener creator for shells like nc, python, etc.
