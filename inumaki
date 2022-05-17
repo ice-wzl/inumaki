@@ -28,7 +28,9 @@ def clear():
     if platform.system() == 'Linux':
         os.system('clear')
     else:
-        os.system('cls')
+        # os.system('cls') there's literally no point to this yet, this script isn't compatible with windows for now.
+        print(err, 'this script only works on linux. for now... sorry about that! :(')
+        sys.exit(1)
 
 
 def banner():
