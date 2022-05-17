@@ -2,9 +2,14 @@
 
 https://user-images.githubusercontent.com/59679082/168722637-88da267c-6d73-414f-8f56-8dc8c56ba6b8.mp4
 
-**inumaki!** is a command-line tool which helps remove the tedium of common capture-the-flag 'shell searching'. it's also my first official project! we've all been there; a bit of time has passed after our enumeration and we're finally ready to send a reverse shell on our target. however, you're soon 30 tabs deep in some random blog posts trying to find out the syntax for that *one command* you know you should've memorized by now but couldn't be bothered to. you give up, head over to pentestmonkey or read through your old notes in an attempt to find that elusive command, and finally, after the motherboard on your target has corroded because of how long it's been, you finally find it; swearing thereon to remember that command so you never forget it again. 
+**inumaki!** is a command-line tool which helps remove the tedium of common capture-the-flag 'shell searching'. it's also my first official project! we've all been there; a bit of time has passed after our enumeration and we're finally ready to run a reverse shell on our target. however, soon, you're 30 tabs deep in some random blog posts trying to find out the syntax for that *one command* you know you should've memorized by now but couldn't be bothered to. you give up, head over to pentestmonkey or read through your old notes in an attempt to find that elusive command, and finally, after the motherboard on your target has corroded because of how long it's been, you finally find it; swearing thereon to remember that command so you never forget it again. 
 
 okay, yes. that's *quite* the exaggeration, but it's really annoying! anyways, inumaki will make it so that you can just type in the language you need a shell for, and it will spit out the most common ones used in CTFs! 
+
+## ⚡ disclaimer! 
+this tool generates reverse shell commands. however, keep in mind that obfuscation does not exist yet. OPSec wise, this tool is the equivalent of running head first into a wall made completely out of megaphones announcing your every move. speaking of reverse shells,
+- DO NOT use these shells, or *any* commands such as these on hosts that you do not have EXPLICIT WRITTEN permission to do so.
+- i will not be held responsible if you decide to use this against someone you don't have permission to attack. be smart, guys.
 
 ## ⭐ installation
 ```
@@ -17,4 +22,5 @@ chmod +x inumaki
 ## to-do 📑
 - create support for user-supplied arguments
 - add more shells/languages
-- add an auto listener creator for shells like nc, python, etc.
+- add an auto listener initializer for shells like nc, python, etc.
+- obfuscated shells? 
