@@ -37,3 +37,4 @@ chmod +x inumaki
 
 - obfuscated shells? <br>
 - support for windows?
+- what else? hmm...
