@@ -40,7 +40,7 @@ chmod +x inumaki
 - support for windows?
 - what else? hmm...
 
-## Credits 💖
+## credits 💖
 a special thank you goes out to **swisskyrepo (swissky)** and the awesome payloadsallthethings repository!
 > honestly, you might just be better off using that repo than my tool 😂 however, most, if not, all of the shells are directly from the following:</br>
 @[swisskyrepo](https://github.com/swisskyrepo),
