@@ -25,7 +25,7 @@ this tool generates reverse shell commands. however, keep in mind that obfuscati
 git clone https://github.com/cr-0w/inumaki.git && cd inumaki
 python3 -m pip install -r requirements.txt
 chmod +x inumaki
-./inumaki
+cp inumaki /usr/local/bin
 ```
 ---
 ## to-do 📑
