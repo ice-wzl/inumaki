@@ -45,7 +45,7 @@ inumaki --list-shells
 ```
 
 ## To-Do 📑
-- <del>`create support for user-supplied arguments`</del>✅ 
+- <del>`create support for user-supplied arguments`</del> ✅ 
 - `add more shells/languages`
 - `add an auto listener initializer for shells like nc, python, etc.`
 
