@@ -3,6 +3,7 @@
 
 - [⚠️ **disclaimer**](https://github.com/cr-0w/inumaki#-disclaimer)
 - [💽 **download**](https://github.com/cr-0w/inumaki#-installation)
+- [🎉 **usage**](https://github.com/cr-0w/inumaki#-usage)
 - [📜 **to-do**](https://github.com/cr-0w/inumaki#to-do-)
 - [💖 **credits**](https://github.com/cr-0w/inumaki#credits-)
 
