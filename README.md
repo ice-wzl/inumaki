@@ -31,7 +31,7 @@ There are many ways to run the `inumaki` script. Ff you followed the instruction
 ```
 cr0w@blackbird:~$ inumaki
 ```
-The script also works with `user-supplied arguments`. If you'd like to skip the whole one-by-one entries for the various parameters the script uses, you can pass them into the command line as follows:
+The script also works with `user-supplied arguments (from v1.1 onwards)`. If you'd like to skip the whole one-by-one entries for the various parameters the script uses, you can pass them into the command line as follows:
 ```
 inumaki -i 10.0.0.1 -p 9999 -s <shell>
 inumaki -i $ip -p $port -s <shell>
