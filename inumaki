@@ -20,7 +20,16 @@ if sys.version_info.major != 3:
     usage: python3 inumaki.py <args> \n''')
     sys.exit(1)
 
-print('\n' + info, 'platform detected: {}'.format(platform.system()))
+acceptedshells = ['POWERSHELL',
+                  'PYTHON3',
+                  'PYTHON',
+                  'BASH',
+                  'PERL',
+                  'RUBY',
+                  'LUA',
+                  'PHP',
+                  'SH',
+                  'NC']
 
 
 def clear():
@@ -28,15 +37,13 @@ def clear():
     if platform.system() == 'Linux':
         os.system('clear')
     else:
-        # os.system('cls') there's literally no point to this yet, this script isn't compatible with windows for now.
-        print(err, 'this script only works on linux. for now... sorry about that! :(')
-        sys.exit(1)
+        os.system('cls')
 
 
 def banner():
     print(Fore.LIGHTMAGENTA_EX + '''\
      |\_/|
-     | @ @   inumaki! (cli shell generator) v1.0
+     | @ @   inumaki! (cli shell generator) v1.1
      |   <>              _
      |  _/\------____ ((| |))    by cr0w
      |               `--' |
@@ -104,8 +111,8 @@ def submitlport():
 
 def showcurrentconfig():
     init()
-    print('\n' + ok + Fore.LIGHTYELLOW_EX, 'lhost, lport', Style.RESET_ALL +
-          'is set to {}:{}'.format(Fore.LIGHTRED_EX + lhost, lport) + '\n' + Style.RESET_ALL)
+    print('\n' + ok, Fore.LIGHTYELLOW_EX + 'lhost, lport', Style.RESET_ALL + 'is set to {}'.format(Fore.LIGHTMAGENTA_EX + lhost) +
+          Fore.LIGHTYELLOW_EX + ':' + '{}'.format(Fore.LIGHTMAGENTA_EX + lport) + '\n' + Style.RESET_ALL)
 
 
 def gettypeofshell():
@@ -127,16 +134,6 @@ def gettypeofshell():
 
     while True:
         try:
-            acceptedshells = ['POWERSHELL',
-                              'PYTHON3',
-                              'PYTHON',
-                              'BASH',
-                              'PERL',
-                              'RUBY',
-                              'LUA',
-                              'PHP',
-                              'SH',
-                              'NC']
             shelltype = input('\n\rcr0w > ')
             if shelltype.upper() in acceptedshells:
                 print('\n' + ok, 'shell is set to {}'.format(Fore.LIGHTYELLOW_EX + shelltype.upper()))
@@ -161,14 +158,136 @@ def showshelloutput():
     for sh in shells:
         print(ok, Fore.LIGHTYELLOW_EX + re.sub('TEMPHOST', lhost, sh).replace('TEMPPORT', lport))
     print(ok, 'thank you for using' + Fore.LIGHTMAGENTA_EX, 'inumaki!', Style.RESET_ALL + 'remember that in the '
-                                                                                          'event of an absent '
+                                                                                          'absence of a '
                                                                                           'fully-tty shell, '
                                                                                           'you should '
                                                                                           'stabilize or spawn a '
                                                                                           'tty :)\n')
 
 
-if __name__ == '__main__':
+parser = argparse.ArgumentParser(description='generate common shells used during CTFs!')
+parser.add_argument('-i', '--ip', metavar='ip', dest='lhost', type=str, help='LHOST', required=False)
+parser.add_argument('-p', '--port', metavar='port', dest='lport', type=int, help='LPORT', required=False)
+parser.add_argument('-s', '--shell', metavar='shell', dest='shelltype', type=str, help='SHELL', required=False)
+parser.add_argument('-l', '--list-shells',
+                    dest='listed',
+                    help='outputs the currently compatible shells (more shells '
+                         'are planned to be included in the future :))',
+                    action='store_true')
+parser.add_argument('-v', '--version', help='prints version', action='version', version='%(prog)s v1.1')
+
+args = parser.parse_args()
+
+if args.listed:
+    print('\n' + ok, 'the accepted shells are', Fore.LIGHTYELLOW_EX,
+          '{}'.format(acceptedshells).replace('[', '').replace(']', ''), '\n')
+
+elif args.lhost and args.lport and args.shelltype:
+    shelltype = args.shelltype
+    lhost = args.lhost
+    lport = args.lport
+    lport = str(lport)
+    if re.match(r'^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$', lhost) and shelltype.upper() in acceptedshells:
+        showshelloutput()
+    elif not re.match(r'^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$', lhost):
+        print('\n')
+        print(err, 'looks like you mistyped an ip, please check your input!\n')
+        sys.exit(1)
+    elif shelltype.upper() not in acceptedshells:
+        print('\n')
+        print(err, 'the shell you have specified either doesn\'t exist or isn\'t currently compatible. exiting...')
+        print(info,
+              'for a list of compatible shells, run the script with `--list-shells` -> ./inumaki --list-shells\n')
+        sys.exit(1)
+
+elif args.lhost and args.lport:
+    lhost = args.lhost
+    lport = args.lport
+    lport = str(lport)
+    init()
+    print('\n' + ok, 'user supplied' + Fore.LIGHTMAGENTA_EX, '{}:{}'.format(lhost.upper(), lport), Style.RESET_ALL)
+    showcurrentconfig()
+    gettypeofshell()
+    showshelloutput()
+    sys.exit(0)
+
+elif args.shelltype and args.lport:
+    shelltype = args.shelltype
+    lport = args.lport
+    lport = str(lport)
+    if shelltype.upper() in acceptedshells:
+        init()
+        print('')
+        print(ok, 'user supplied' + Fore.LIGHTMAGENTA_EX, '{}'.format(shelltype.upper()), Style.RESET_ALL)
+        print(ok, 'user supplied' + Fore.LIGHTMAGENTA_EX, '{}'.format(lport), Style.RESET_ALL)
+        inetfaces()
+        submitlhost()
+        showcurrentconfig()
+        showshelloutput()
+    else:
+        print('')
+        print(err, 'the shell you have specified either doesn\'t exist or isn\'t currently compatible. exiting...')
+        print(info,
+              'for a list of compatible shells, run the script with `--list-shells` -> ./inumaki --list-shells\n')
+        sys.exit(1)
+
+elif args.shelltype and args.lhost:
+    shelltype = args.shelltype
+    lhost = args.lhost
+    if shelltype.upper() in acceptedshells:
+        init()
+        print('')
+        print(ok, 'user supplied' + Fore.LIGHTMAGENTA_EX, '{}'.format(shelltype.upper()), Style.RESET_ALL)
+        print(ok, 'user supplied' + Fore.LIGHTMAGENTA_EX, '{}'.format(lhost), Style.RESET_ALL)
+        submitlport()
+        showcurrentconfig()
+        showshelloutput()
+    else:
+        print('')
+        print(err, 'the shell you have specified either doesn\'t exist or isn\'t currently compatible. exiting...')
+        print(info,
+              'for a list of compatible shells, run the script with `--list-shells` -> ./inumaki --list-shells\n')
+        sys.exit(1)
+
+elif args.lhost:
+    lhost = args.lhost
+    init()
+    print('\n', ok, 'user supplied' + Fore.LIGHTMAGENTA_EX, '{}'.format(lhost.upper()), Style.RESET_ALL)
+    submitlport()
+    showcurrentconfig()
+    gettypeofshell()
+    showshelloutput()
+
+elif args.lport:
+    lport = args.lport
+    lport = str(lport)
+    init()
+    print('\n' + ok, 'user supplied' + Fore.LIGHTMAGENTA_EX, '{}'.format(lport), Style.RESET_ALL)
+    inetfaces()
+    submitlhost()
+    showcurrentconfig()
+    gettypeofshell()
+    showshelloutput()
+
+elif args.shelltype:
+    shelltype = args.shelltype
+    if shelltype.upper() in acceptedshells:
+        init()
+        print('\n')
+        print('\n' + ok + 'user supplied' + Fore.LIGHTMAGENTA_EX, '{}'.format(shelltype.upper()), Style.RESET_ALL)
+        inetfaces()
+        submitlhost()
+        submitlport()
+        showcurrentconfig()
+        showshelloutput()
+    else:
+        print('\n')
+        print(err, 'the shell you have specified either doesn\'t exist or isn\'t currently compatible. exiting...')
+        print(info,
+              'for a list of compatible shells, run the script with `--list-shells` -> ./inumaki --list-shells\n')
+        sys.exit(1)
+
+elif __name__ == '__main__':
     clear()
     banner()
     inetfaces()
