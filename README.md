@@ -47,7 +47,7 @@ The script also works with `user-supplied arguments (from v1.1 onwards)`. If you
 inumaki -i 10.0.0.1 -p 9999 -s <shell>
 inumaki -i $ip -p $port -s <shell>
 ```
-As stated before, this script is ever growing, so, more shells are surely on their way once I get the time to incorporate them in. To list the *currently compatible* shells, run the script with `--list-shells`:
+As stated before, this script is ever growing, so, more shells are surely on their way once I get the time to incorporate them in. To list the *currently compatible* shells, run the script with `-l or --list-shells`:
 ```
 inumaki --list-shells
 
