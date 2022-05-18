@@ -27,9 +27,20 @@ python3 -m pip install -r requirements.txt
 chmod +x inumaki
 ```
 ## 🩸 Usage 
-To run the `inumaki` script, just:
 ```
-cr0w@blackbird:~$ inumaki
+cr0w@blackbird:~$ inumaki -h
+usage: inumaki [-h] [-i ip] [-p port] [-s shell] [-l] [-v]
+
+generate common shells used during CTFs!
+
+options:
+  -h, --help            show this help message and exit
+  -i ip, --ip ip        LHOST
+  -p port, --port port  LPORT
+  -s shell, --shell shell
+                        SHELL
+  -l, --list-shells     outputs the currently compatible shells (more shells are planned to be included in the future :))
+  -v, --version         prints version
 ```
 The script also works with `user-supplied arguments (from v1.1 onwards)`. If you'd like to skip the whole one-by-one entries for the various parameters the script uses, you can pass them into the command line as follows:
 ```
