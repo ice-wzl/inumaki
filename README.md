@@ -24,10 +24,8 @@ This tool generates reverse shell commands. However, keep in mind that obfuscati
 git clone https://github.com/cr-0w/inumaki.git && cd inumaki
 python3 -m pip install -r requirements.txt
 chmod +x inumaki
-cp inumaki /usr/local/bin
 ```
 ## 🩸 Usage 
-
 There are many ways to run the `inumaki` script. Ff you followed the instructions above, it should be stored in `/usr/local/bin` or some other entry in your `$PATH` so that you can call the script from anywhere. 
 ```
 cr0w@blackbird:~$ inumaki
