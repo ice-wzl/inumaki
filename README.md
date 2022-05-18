@@ -27,7 +27,7 @@ python3 -m pip install -r requirements.txt
 chmod +x inumaki
 ```
 ## 🩸 Usage 
-There are many ways to run the `inumaki` script. Ff you followed the instructions above, it should be stored in `/usr/local/bin` or some other entry in your `$PATH` so that you can call the script from anywhere. 
+To run the `inumaki` script, just:
 ```
 cr0w@blackbird:~$ inumaki
 ```
