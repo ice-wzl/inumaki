@@ -26,7 +26,7 @@ git clone https://github.com/cr-0w/inumaki.git && cd inumaki/
 python3 -m pip install -r requirements.txt
 chmod +x inumaki.py
 
-# completely optional, but you could create a symlink to run the script from anywhere:
+# completely optional (but recommended), you could create a symlink to run the script from anywhere:
 ln -s $(realpath inumaki.py) /usr/local/bin/inumaki
 ```
 ## 🩸 Usage 
