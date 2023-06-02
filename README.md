@@ -8,14 +8,12 @@
 - [📜 **to-do**](https://github.com/cr-0w/inumaki#-to-do)
 - [💖 **credits**](https://github.com/cr-0w/inumaki#-credits)
 
-`inumaki!` is a command-line tool written in python which helps remove the tedium of common capture-the-flag 'shell searching'. It's also `my first official project!` We've all been there; a bit of time has passed since our enumeration and we're finally ready to run a reverse shell on our target. However, soon, you're 30 tabs deep in some random blog posts trying to find out the syntax for *that one command* you know you should've memorized by now but couldn't be bothered to. You give up, head over to pentestmonkey, or read through your old notes in an attempt to find that elusive command, and finally, after the motherboard on your target has corroded because of how long it's been, you finally find it; swearing thereafter to remember that command so you never forget it again.
+`inumaki!` is a command-line tool written in python which helps remove the tedium of common capture-the-flag reverse shell payload searching.
 
 https://user-images.githubusercontent.com/59679082/168722637-88da267c-6d73-414f-8f56-8dc8c56ba6b8.mp4
 
-> Okay, yes. That's *quite* the exaggeration, but it's really annoying! Anyways, inumaki will make it so that you can just type in the language you need a shell for, and it will spit out the most common ones used in CTFs!
-
 ## ⚡ Disclaimer! 
-This tool generates reverse shell commands. However, keep in mind that obfuscation does not exist yet. **OPSEC wise, this tool is the equivalent of running head first into a wall made completely out of megaphones announcing your every move. Speaking of reverse shells**...
+This tool generates reverse shell commands. However, keep in mind that obfuscation for some of the shells does not exist yet.
 
 - DO NOT use these shells, or *any* commands such as these on hosts which you do not have EXPLICIT WRITTEN permission to do so.
 - The author of `inumaki!` will not be held responsible if you decide to use this against someone or something you don't have permission to attack. Be smart, guys.
@@ -27,6 +25,7 @@ git clone https://github.com/cr-0w/inumaki.git && cd inumaki/
 python3 -m pip install -r requirements.txt
 chmod +x inumaki.py
 ```
+
 ## 🩸 Usage 
 ```
 cr0w@blackbird:~$ inumaki -h
@@ -67,7 +66,7 @@ inumaki --list-shells
 
 - `obfuscated shells?` <br>
 - `support for windows?`
-- `what else? hmm...`
+- `...`
 
 ## 💖 Credits 
 A special thank you goes out to **swisskyrepo (swissky)** and the awesome `PayloadsAllTheThings` repository!
