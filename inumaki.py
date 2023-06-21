@@ -24,6 +24,7 @@ acceptedshells = ['POWERSHELL',
                   'PYTHON3',
                   'PYTHON',
                   'BASH',
+                  'BUSYBOX',
                   'PERL',
                   'RUBY',
                   'LUA',
@@ -127,6 +128,7 @@ def gettypeofshell():
     PYTHON3
     PYTHON
     BASH
+    BUSYBOX
     PERL
     RUBY
     LUA
