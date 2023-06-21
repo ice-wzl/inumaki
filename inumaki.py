@@ -29,7 +29,9 @@ acceptedshells = ['POWERSHELL',
                   'LUA',
                   'PHP',
                   'SH',
-                  'NC']
+                  'SOCAT',
+                  'NC',
+                  'ZSH']
 
 
 def clear():
@@ -130,7 +132,9 @@ def gettypeofshell():
     LUA
     PHP
     SH
-    NC''', Style.RESET_ALL)
+    SOCAT
+    NC
+    ZSH''', Style.RESET_ALL)
 
     while True:
         try:

